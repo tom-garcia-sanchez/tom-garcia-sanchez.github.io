@@ -1,10 +1,31 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom garcia-sanchez</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Navbar</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <h1>Welcome to personal page</h1>
+    <nav class="navbar">
+        <div class="navbar-header">
+          <div class="brand">Tom Garcia-Sanchez
+            <span class="subtitle">Researcher in Probability theory & application</span>
+          </div>
+          <button class="menu-toggle" id="menu-toggle">&#9776;</button>
+        </div>
+      
+        <ul class="nav-links" id="nav-links">
+          <li class="nav-item active"><a href="#">Home</a></li>
+          <li class="nav-item"><a href="#">Publications</a></li>
+          <li class="nav-item"><a href="#">Gallery</a></li>
+          <li class="nav-item"><a href="#">Resume</a></li>
+          <li class="nav-item"><a href="#">Talks</a></li>
+          <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+
+  <script src="script.js"></script>
 </body>
 </html>
