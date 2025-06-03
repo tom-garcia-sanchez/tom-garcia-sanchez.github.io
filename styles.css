@@ -64,6 +64,35 @@ body {
   border-bottom: 1px solid white;
 }
 
+.nav-waves img{
+  margin-top: -1px;
+  padding: 0%;
+  margin-left: -10px;
+  width: 150%;
+}
+.about-me-wave{
+  margin-top: 1rem;
+  z-index: 10;
+}
+.about-me{
+  margin-top: 5rem;
+  height: fit-content;
+}
+img.about-me-wave-bottom{
+margin-top: -2.6rem;
+}
+.welcome-box{
+  margin-top: -1.2rem;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(./images/fractals.jpg);
+  display: flex;
+  padding: 1rem;
+  height: 5rem;
+  font-size: 30px;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+}
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .navbar {
@@ -84,5 +113,17 @@ body {
   .nav-item a {
     padding: 1rem;
     border-top: 1px solid #222;
+  }
+  .nav-waves{
+    height: 40px;
+    padding: 0;
+    margin: 0;
+  }
+  .nav-waves img{
+    margin-top: -22px;
+    padding: 0%;
+    margin-left: -30px;
+    width: 150%;
+    height: 120%;
   }
 }
