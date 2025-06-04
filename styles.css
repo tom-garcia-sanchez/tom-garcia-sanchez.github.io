@@ -65,26 +65,44 @@ body {
 }
 
 .nav-waves img{
+  position: absolute;
   margin-top: -1px;
-  padding: 0%;
-  margin-left: -10px;
-  width: 150%;
+  left: 0;
+  margin-left: 0px;
+  width: 100%;
 }
-.about-me-wave{
-  margin-top: 1rem;
-  z-index: 10;
-}
-.about-me{
+.about-me {
+  position: relative;
   margin-top: 5rem;
   height: fit-content;
+  overflow: hidden; /* ensures the absolute wave doesn't overflow */
 }
-img.about-me-wave-bottom{
-margin-top: -2.6rem;
+
+.about-me-wave-top{
+  position: absolute;
+margin-top: 30px; 
+ bottom: 2;
+  left: 0;
+  width: 100%;
+  z-index: 4;
 }
-.welcome-box{
-  margin-top: -1.2rem;
+
+img.about-me-wave-bottom {
+  position: absolute;
+  margin-top: -14px;
+  bottom: 11;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  pointer-events: none; /* optional, lets clicks go through */
+}
+
+.welcome-box {
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem; /* or adjust as needed */
   background-size: cover;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(./images/fractals.jpg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/fractals.jpg);
   display: flex;
   padding: 1rem;
   height: 5rem;
@@ -93,6 +111,7 @@ margin-top: -2.6rem;
   align-items: center;
   color: whitesmoke;
 }
+
 /* Mobile responsiveness */
 @media (max-width: 768px) {
   .navbar {
