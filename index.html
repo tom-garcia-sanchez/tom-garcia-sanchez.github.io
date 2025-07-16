@@ -1,10 +1,489 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tom garcia-sanchez</title>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tom Garcia-Sanchez</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: white;
+      padding-top: 120px;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      color: white;
+      background-color: black;
+      z-index: 1000;
+      height: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .header-content {
+      padding: 3rem 2rem 1rem 2rem;
+      display: flex;
+      z-index: 10;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .branding h1 {
+      font-size: 1.5rem;
+    }
+
+    .branding p {
+      font-size: 0.63rem;
+      line-height: 0;
+      margin-top: .1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 1.2rem;
+      transform: translateY(-1px);
+    }
+
+    nav a {
+      position: relative;
+      display: inline-block;
+      color: white;
+      text-decoration: none;
+      position: relative;
+      z-index: 2;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background: white;
+      transition: width 0.3s ease;
+      z-index: 3;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .nav-line {
+      position: absolute;
+      margin-top: 1px;
+      height: 3px;
+      position:absolute;
+      background: rgb(42, 42, 42);
+      width: calc(100% - 297px);
+      left: 265px;
+      bottom:13px;
+      z-index: 1;
+    }
+
+    /* === SECTION SYSTEM === */
+
+    .section-strip {
+      text-align: center;
+      position: relative;
+      height: 100px;
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* parallax effect */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 1rem;
+      color: white;
+      user-select: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section-strip h2 {
+      display: block;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: 900;
+      transform: translateY(7px);
+    }
+
+    .section-content {
+      max-width: 80%;
+      margin: 1rem auto 1.5rem;
+      padding: 0 2rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+      word-break: break-word;
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .header-wave {
+      position: fixed;
+      top: 60px;
+      height: auto;
+      z-index: 999;
+      pointer-events: none;
+      overflow: visible;
+      line-height: 0;
+    }
+
+    .header-wave img {
+      width: 100vw;
+      height: auto;
+      display: block;
+      transform: scaleX(1.2);
+    }
+
+    .wave-top {
+      line-height: 0;
+    }
+
+    .wave-top img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      transform: scaleX(1.2);
+      height: auto;
+    }
+
+    .wave-bottom {
+      line-height: 0;
+    }
+
+    .wave-bottom img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      min-width: 100%;
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      transform: scaleX(1.2);
+    }
+
+    .bottom-wave {
+      line-height: 0;
+    }
+
+    .bottom-wave img {
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      line-height: 0;
+      transform: scaleX(1.2);
+      height: auto;
+      display: block;
+      z-index: 1000;
+    }
+
+    html, body {
+      overflow-x: hidden;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      scroll-padding-top: 80px;
+    }
+
+    img {
+      width: 150px;
+    }
+
+    img.pdpimg {
+      float: right;
+      margin: 1em 0em 1em 2.5em;
+      height: auto;
+    }
+
+    .section-content::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    .title {
+      margin-top: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: rgb(234, 234, 234);
+      margin: -0.25em 0 .5em;
+    }
+
+    .indent_text {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      text-align: justify;
+      font-family: 'Georgia', 'Times New Roman', Times, serif;
+    }
+
+    .gallery-item {
+      width: 100%;
+      margin: 1.5em auto;
+      clear: both;
+    }
+
+    .gallery-item img {
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    #menu-toggle {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 2rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.75rem;
+      cursor: pointer;
+      z-index: 1002;
+    }
+
+    @media (max-width: 650px) {
+      nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        align-items: center;
+        top: 60px;
+        right: 2rem;
+        background-color: black;
+        padding: 1rem;
+        z-index: 1001;
+      }
+
+      nav.nav-open {
+        display: flex;
+      }
+
+      #menu-toggle {
+        display: block;
+      }
+
+      .nav-line {
+        display: none;
+      }
+    }
+
+    @media (min-width: 651px) {
+      nav {
+        display: flex !important; /* ensures wide view always shows nav */
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to personal page</h1>
+
+  <header>
+    <div class="header-content">
+      <div class="branding">
+        <h1>Tom Garcia-Sanchez</h1>
+        <p>Researcher in Probability Theory & Applications</p>
+      </div>
+      
+      <button id="menu-toggle">&#8942;</button>
+      
+      <nav>
+        <a href="#about">About me</a>
+        <a href="#publications">Publications</a>
+        <a href="#gallery">Gallery</a>
+      </nav>
+    </div>
+    <div class="nav-line"></div>
+  </header>
+
+  <div class="header-wave">
+    <img src="black_bottom_wave.svg" alt="Wave Divider" />
+  </div>
+  
+  <!-- About me section: -->
+  <section id="about">
+    <div class="section-strip" style="background: black;">
+      <div class="wave-top">
+        <img src="white_bottom_wave.svg" alt="" />
+      </div>
+      <h2>About me</h2>
+      <div class="wave-bottom">
+        <img src="white_top_wave.svg" alt="" />
+      </div>
+    </div>
+    
+    <div class="section-content">
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='230'><rect width='200' height='230' fill='black'/></svg>" alt="Black square" class="pdpimg" />
+
+      <div class="title">Current position</div>
+      <hr />
+      <div class="indent_text">
+        <p>
+          Since <i>October 2024</i>, I have been a PhD student at <i>IMT Nord Europe</i> (Lille, France), under the supervision of 
+          <a href="https://sites.google.com/view/pageprodedavidcoupier/" target="_blank">David Coupier</a> and 
+          <a href="unkown" target="_blank">Chi Tran</a>.
+          My thesis is titled <i>"The Directed Spanning Forest: coalescence versus dimension"</i>. 
+          The broader research goal is to study natural problems associated with some random geometric
+          graphs — such as their number of connected components, scaling limits, and the behavior
+          of their infinite paths, including asymptotic directions.
+        </p>
+      </div>
+      <div class="title">Areas of interrest</div>
+      <hr />
+      <div class="indent_text">
+        <p>
+         I am particularly interested in probabilistic models built from simple and natural local 
+         rules that give rise to rich and complex macroscopic behavior.
+        </p>
+      </div>
+      <div class="title">Short CV</div>
+      <hr />
+      <div class="indent_text">
+        <p>
+          I graduated from the <i>École Normale Supérieure</i> (ENS) 
+          in Paris and from <i>Université Paris-Saclay</i> in 2024, where I completed 
+          the Master 2 program in Probability and Statistics at Orsay. 
+          Prior to that, I was an undergraduate student at <i>Aix-Marseille Université</i>.
+        </p>
+      </div>
+      <div class="title">Contact</div>
+      <hr />
+      <div class="indent_text">
+        The easiest way to contact me is via email: tom.garcia-sanchez at imt-nord-europe.fr.
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="section-strip" style="background: black;">
+      <div class="wave-top">
+        <img src="white_bottom_wave.svg" alt="" />
+      </div>
+      <h2>Publications</h2>
+      <div class="wave-bottom">
+        <img src="white_top_wave.svg" alt="" />
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="title">Published/Accepted works</div>
+      <hr />
+      <div class="indent_text">
+        <p>
+          <strong>[A1]</strong> <i>First Passage Percolation with Recovery</i>, joint work with
+          <a href="https://sites.google.com/site/candelleroelisabetta" target="_blank" rel="noopener noreferrer">Elisabetta Candellero</a>.
+          <i>Stochastic Processes and their Applications</i>, Volume 179, article number 104512 (2025). Preprint available on 
+          <a href="https://arxiv.org/abs/2402.03930" target="_blank" rel="noopener noreferrer">arXiv</a>.
+        </p>
+      </div>
+      <div class="title">Preprints</div>
+      <hr />
+      <div class="indent_text">
+        <p>
+          <strong>[P1]</strong> <i>The Directed Spanning Forest: coalescence versus dimension</i>. Submitted (2025), available on 
+          <a href="https://arxiv.org/abs/2402.03930" target="_blank" rel="noopener noreferrer">arXiv</a>.
+        </p>
+      </div>
+      
+    </div>
+  </section>
+
+  <section id="gallery">
+    <div class="section-strip" style="background: black;">
+      <div class="wave-top">
+        <img src="white_bottom_wave.svg" alt="" />
+      </div>
+      <h2>Gallery</h2>
+      <div class="wave-bottom">
+        <img src="white_top_wave.svg" alt="" />
+      </div>
+    </div>
+    <div class="section-content">
+      <div class="title">Some images of my research</div>
+      <hr />
+      <div class="gallery-item">
+        <img src="fppr_tree.svg" alt="" style="float: left; margin-right: 2rem; width: 250px;" />
+        <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">
+          On the left is a simulation of the <i>First Passage Percolation with Recovery</i> process
+          at time \(t=13\) with <i>recovery rate</i> \(\gamma=\frac{1}{2}\) 
+          on a <i>Galton Waston tree</i> with <i>branching distribution</i> \(\mathrm{Bin}(2,\frac{4}{5})\).
+          
+          The black edges show the <i>infected cluster</i> reached by the standard <i>first-passage percolation</i> process (with rate \(1\))
+          spreading from the root by time \(t\). Red vertices mark individuals whose <i>recovery clocks</i> (running at rate \(\gamma\)) 
+          were triggered upon infection by time \(t\), but had not yet rung.
+
+          In <strong>[A1]</strong>, we introduce and analyze this 
+          original model, where a recovery mechanism runs independently on top of a first-passage percolation process, 
+          deriving asymptotics for the size of red components as \(t\to\infty\).
+        </p>
+      </div>
+
+      <div class="gallery-item">
+        <img src="dsf_simu.svg" alt="" style="float: right; margin-left: 2.5rem; width: 225px;" />
+        <p style="font-family: 'Georgia', 'Times New Roman', Times, serif;">
+          On the right is a simulation of the 2-dimensional <i>Directed Spanning Forest</i> (DSF). 
+          In grey are represented the <i>edges</i> of this <i>random geometric graph</i>, while in red are highlighted 
+          the infinite paths starting from some vertices located below the bottom of the displayed area.
+
+          The DSF of dimension \(d\geq 2\) is the random geometric graph whose vertex set is given by a 
+          <i>homogeneous Poisson point process</i> \(\mathcal N\) in \(\mathbb R^d\) and whose <i>edges</i> 
+          consist of all pairs \((x, y)\in\mathcal N^2\) such that \(y\) is the closest point 
+          to \(x\) in \(\mathcal N\) with a strictly larger \(e_d\) coordinate. 
+          The DSF has a natural <i>forest</i> structure: it is a collection of <i>unrooted directed trees</i>. 
+          A natural question is whether the DSF forms a single tree, 
+          meaning that all directed paths eventually coalesce, or whether it consists of several disjoint trees.
+          
+          The case \(d=2\) is now well understood: Coupier, Saha, Sarkar, and Tran 
+          showed in 2021 that the 2-dimensional DSF is almost surely a tree
+          and converges under appropriate <i>diffusive scaling</i> to the <i>Brownian web</i>.
+          
+          In <strong>[P1]</strong>, we addressed for the first time the question of coalescence outside the planar setting. 
+          We showed that the DSF is almost surely a tree when \(d \leq 3\), 
+          and that it consists of infinitely many disjoint trees when \(d \geq 4\).
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer-wave" style="line-height: 0;">
+    <img src="black_top_wave.svg" alt="Wave Divider" style="width: 100%; bottom: 0; transform: scaleX(1.2); margin-bottom: -1px;"/>
+  </div>
+  <footer class="footer-strip" style="background-color: black; color:white; height: 30px;">
+    <div style="text-align: right; transform: translateY(0.25rem); margin-right:2rem;">
+      <i>Last updated on July 2025</i>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menu-toggle');
+    const nav = document.querySelector('nav');
+
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
+  </script>
 </body>
 </html>
