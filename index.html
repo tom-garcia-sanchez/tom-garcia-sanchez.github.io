@@ -9,7 +9,7 @@
   <meta name="google-site-verification" content="CL6NZWFLtM9Px56UgMiJpkGMmZ2-oOWUAHYNtdJ0M_c"/>
   <meta name="robots" content="index, follow">
 
-  <title>Tom Garcia-Sanchez - Researcher in Probability</title>
+  <title>Tom Garcia-Sanchez | Researcher in Probability</title>
   <style>
     * {
       margin: 0;
@@ -149,7 +149,7 @@
     }
 
     .section-content {
-      max-width: 80%;
+      max-width: min(70%, 55rem);
       margin: 0 auto 0;
       background-color: white;
       font-size: 1rem;
@@ -187,7 +187,7 @@
       position: absolute;
       bottom: -1px;
       left: 0;
-      width: 100vw;
+      width: 100w;
       min-width: 100%;
       max-width: 100%;
       height: auto;
@@ -290,9 +290,9 @@
       background-image: url('mountains.png');
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover; /* or contain, or other based on your needs */
-      z-index: -1; /* put it behind everything */
-      pointer-events: none; /* so clicks pass through */
+      background-size: cover;
+      z-index: -1;
+      pointer-events: none;
     }
 
     @media (max-width: 650px) {
@@ -377,14 +377,15 @@
           <a href="https://tranvietchi59.github.io" target="_blank">Viet Chi Tran</a>.
           My thesis is titled <i>"The Directed Spanning Forest: coalescence versus dimension"</i>. 
           The broader research goal is to study natural problems associated with some random geometric
-          graphs — such as their number of connected components, scaling limits, and the behavior
+          graphs such as their number of connected components, scaling limits, and the behavior
           of their infinite paths, including asymptotic directions.
         </p>
         <div class="title">Areas of interrest</div>
         <hr />
         <p class="georgia-text">
-        I am particularly interested in probabilistic models built from simple and natural local 
-        rules that give rise to rich and complex macroscopic behavior.
+          I am particularly interested in probabilistic models built from simple and natural local 
+          rules that give rise to rich and complex macroscopic behavior. More concretely, my interests 
+          include problems related to <i>stochastic geometry</i>, <i>random graphs</i> and <i>percolation</i>.
         </p>
         <div class="title">Short CV</div>
         <hr />
@@ -395,9 +396,10 @@
           Prior to that, I was an undergraduate student at <i>Aix-Marseille Université</i>.
         </p>
         <div class="title">Contact</div>
-        <hr />
+        <hr/>
         <p class="georgia-text" style="margin-bottom: 1rem;">
-          The easiest way to contact me is via email: tom.garcia-sanchez@imt-nord-europe.fr
+          The easiest way to contact me is via email: tom.garcia-sanchez@imt-nord-europe.fr. 
+          I may also be found in my office <i>E105N</i> in the IMT building of the Villeneuve d'Ascq university campus.
         </p>
       </div>
     </div>
@@ -427,7 +429,10 @@
         <hr />
         <p class="georgia-text" style="margin-bottom: 1rem;">
           <strong>[P1]</strong> <i>The Directed Spanning Forest: coalescence versus dimension</i>. Submitted (2025), available on 
-          <a href="https://arxiv.org/abs/2507.13289" target="_blank" rel="noopener noreferrer">arXiv</a>.
+          <a href="https://arxiv.org/abs/2507.13289" target="_blank" rel="noopener noreferrer">arXiv</a>.<br>
+
+          <strong>[P2]</strong> <i>The Radial Spanning Tree is straight in all dimensions</i>. Submitted (2026), available on 
+          <a href="https://arxiv.org/abs/2601.08667" target="_blank" rel="noopener noreferrer">arXiv</a>.
         </p>
       </div>
     </div>
@@ -467,25 +472,44 @@
         <div class="gallery-item">
           <img src="dsf_simu.svg" alt="" style="float: right; margin-left: 1.5rem; width: 45%; max-width: 250px;" />
           <p class="georgia-text">
-            On the right is a simulation of the 2-dimensional <i>Directed Spanning Forest</i> (DSF). 
-            In grey are represented the <i>edges</i> of this <i>random geometric graph</i>, while in red are highlighted 
-            the infinite paths starting from some vertices located below the bottom of the displayed area.
-
-            The DSF of dimension \(d\geq 2\) is the random geometric graph whose vertex set is given by a 
+            The <i>Directed Spanning Forest</i> (DSF) of dimension \(d\geq 2\) is a random geometric graph whose vertex set is given by a 
             <i>homogeneous Poisson point process</i> \(\mathcal N\) in \(\mathbb R^d\) and whose <i>edges</i> 
             consist of all pairs \((x, y)\in\mathcal N^2\) such that \(y\) is the closest point 
             to \(x\) in \(\mathcal N\) with a strictly larger \(e_d\) coordinate. 
             The DSF has a natural <i>forest</i> structure: it is a collection of <i>unrooted directed trees</i>. 
             A natural question is whether the DSF forms a single tree, 
             meaning that all directed paths eventually coalesce, or whether it consists of several disjoint trees.
-            
-            The case \(d=2\) is now well understood: Coupier, Saha, Sarkar, and Tran 
-            showed in 2021 that the 2-dimensional DSF is almost surely a tree
-            and converges under appropriate <i>diffusive scaling</i> to the <i>Brownian web</i>.
-            
-            In <strong>[P1]</strong>, we addressed for the first time the question of coalescence outside the planar setting. 
-            We showed that the DSF is almost surely a tree when \(d \leq 3\), 
+
+            In <strong>[P1]</strong>, we address this question in arbitrary dimension 
+            obtaining that the DSF is almost surely a tree when \(d \leq 3\), 
             and that it consists of infinitely many disjoint trees when \(d \geq 4\).
+
+            On the right is a simulation of the 2-dimensional DSF in a finite box. 
+            In grey are represented its edges, while in red are highlighted 
+            the infinite paths starting from some vertices located below the bottom of the displayed area.
+          </p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="fig_rst_subtree.svg" alt="" style="float: left; margin-right: 2rem; width: 45%; max-width: 250px;" />
+          <p class="georgia-text">
+            The <i>Radial Spanning Tree</i> (RST) of dimension \(d\geq 2\) is a random geometric graph constructed on a homogeneous 
+            Poisson point process \(\mathcal N\) in \(\mathbb R^d\) augmented by the origin, 
+            with edges connecting each \(x\in\mathcal N\) to the nearest point \(y\in\mathcal N\cup\{0\}\) 
+            that lies closer to 0 than \(x\), with respect to the Euclidean distance. 
+            By construction, it forms almost surely a tree rooted at 0. A natural question is whether infinite branches exists and are asymptotically directed. 
+            
+            In <strong>[P2]</strong>, we establish that
+            the RST is almost surely <i>straight</i> in any dimension, meaning that the angular spread of its sub-trees vanishes as their sub-roots
+            goes to infinity. This notion of <i>straightness</i>, introduced by Howard and Newman in 2001, allow to obtain that with probability one,
+            all infinite branches are asymptotically directed, every possibility is attained, and directions reached 
+            by multiple infinite branches form a dense subset of \(\mathbb S^{d-1}\). 
+            
+            On the left is a simulation of the 2-dimentional RST in a finite ball around the origin. Edges appear in light gray, with thickness decreasing with length. In red are highlighted some sub-trees exiting the displayed
+            area, contained within translucent red cones pointing toward their sub-roots, with arbitrarily chosen
+            apertures that appear to decrease to 0 with the distance to the origin, suggesting straightness.
+            In black are highlighted some finite sub-trees remaining within the area, illustrating that RST
+            sub-trees are not necessarily infinite.
           </p>
         </div>
       </div>
@@ -503,7 +527,7 @@
   </div>
   <footer class="footer-strip" style="background-color: black; color:white; height: 30px;">
     <div style="text-align: right; transform: translateY(0.25rem); margin-right:2rem;">
-      <i>Last updated on August 2025</i>
+      <i>Last updated on January 2026</i>
     </div>
   </footer>
 
