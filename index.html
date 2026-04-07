@@ -10,6 +10,8 @@
   <meta name="robots" content="index, follow">
 
   <title>Tom Garcia-Sanchez | Researcher in Probability</title>
+  <link rel="icon" type="image/svg" href="/favicon.svg">
+
   <style>
     * {
       margin: 0;
@@ -287,7 +289,7 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background-image: url('mountains.png');
+      background-image: url('mountains_dark.png');
       background-repeat: no-repeat;
       background-position: center;
       background-size: cover;
@@ -432,7 +434,10 @@
           <a href="https://arxiv.org/abs/2507.13289" target="_blank" rel="noopener noreferrer">arXiv</a>.<br>
 
           <strong>[P2]</strong> <i>The Radial Spanning Tree is straight in all dimensions</i>. Submitted (2026), available on 
-          <a href="https://arxiv.org/abs/2601.08667" target="_blank" rel="noopener noreferrer">arXiv</a>.
+          <a href="https://arxiv.org/abs/2601.08667" target="_blank" rel="noopener noreferrer">arXiv</a>.<br>
+
+          <strong>[P3]</strong> <i>Connected components and topological ends of stationary planar forests</i>. Submitted (2026), available on
+          <a href="https://arxiv.org/abs/2604.04672" target="_blank" rel="noopener noreferrer">arXiv</a>.
         </p>
       </div>
     </div>
@@ -512,6 +517,60 @@
             sub-trees are not necessarily infinite.
           </p>
         </div>
+
+        <div class="gallery-item">
+          <img src="ust_heatmaps_edges.svg" alt="" style="float: right; margin-left: 1.5rem; width: 45%; max-width: 250px;" />
+          <p class="georgia-text">
+            Consider a random forest (i.e., an acyclic graph) embedded the plane. A natural problem is to understand
+            its topological structure by classifying its connected components of the forest (namely, the trees) 
+            according to their number of topological ends, that is, the number of distinct infinite branch they possess. 
+            More precisely, we may study, for each (possibly infinite) \(k\geq0\), the number \(N_k\) of trees in the forest 
+            that admits exactly \(k\) topological ends. In <strong>[P3]</strong>, we establish a complete classification 
+            result under mild assumptions (specifically non-crossing property, stationarity, and finite edge intensity) 
+            which describes exactly the possibilities for the sequence \((N_k)_{k\geq0}\).
+            
+            To the right is a simulation of the <i>Uniform Spanning Forest</i> (USF) of \(\mathbb Z^2\),
+            a random graph obtained as the weak limit of uniform spanning tree in boxes of the \(\mathbb Z^2\) 
+            lattice whose side lengths tend to infinity. This object falls within the scope of our result and is well-understood. 
+            In particular, it is know that the USF of \(\mathbb Z^2\) is almost surely a single one-ended tree,
+            which allow one to orient its edge toward the unique topological end. In the picture, 
+            the edge brightness is modulated by the distance from the furthest descendant leaves,
+            which helps visualize the fractal-like structure of the object.
+
+          </p>
+        </div>
+
+        <!--<div class="title">Other pictures</div>
+        <hr />
+
+        <div class="gallery-item">
+          <img src="mountains.png" alt="" style="float: left; margin-right: 2rem; width: 45%; max-width: 250px;" />
+          <p class="georgia-text">
+            To the left is the background image of the website: a landscape obtained via <i>procedural generation</i>.
+          </p>
+        </div>
+
+        <div class="gallery-item">
+          <img src="newton.png" alt="" style="float: right; margin-left: 1.5rem; width: 45%; max-width: 250px;" />
+          <p class="georgia-text">
+            The <i>Directed Spanning Forest</i> (DSF) of dimension \(d\geq 2\) is a random geometric graph whose vertex set is given by a 
+            <i>homogeneous Poisson point process</i> \(\mathcal N\) in \(\mathbb R^d\) and whose <i>edges</i> 
+            consist of all pairs \((x, y)\in\mathcal N^2\) such that \(y\) is the closest point 
+            to \(x\) in \(\mathcal N\) with a strictly larger \(e_d\) coordinate. 
+            The DSF has a natural <i>forest</i> structure: it is a collection of <i>unrooted directed trees</i>. 
+            A natural question is whether the DSF forms a single tree, 
+            meaning that all directed paths eventually coalesce, or whether it consists of several disjoint trees.
+
+            In <strong>[P1]</strong>, we address this question in arbitrary dimension 
+            obtaining that the DSF is almost surely a tree when \(d \leq 3\), 
+            and that it consists of infinitely many disjoint trees when \(d \geq 4\).
+
+            On the right is a simulation of the 2-dimensional DSF in a finite box. 
+            In grey are represented its edges, while in red are highlighted 
+            the infinite paths starting from some vertices located below the bottom of the displayed area.
+          </p>
+        </div>-->
+
       </div>
     </div>
   </section>
@@ -527,7 +586,7 @@
   </div>
   <footer class="footer-strip" style="background-color: black; color:white; height: 30px;">
     <div style="text-align: right; transform: translateY(0.25rem); margin-right:2rem;">
-      <i>Last updated on January 2026</i>
+      <i>Last updated on April 2026</i>
     </div>
   </footer>
 
